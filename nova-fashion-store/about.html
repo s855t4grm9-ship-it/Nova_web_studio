@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOIR | About Us</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f1e9;
+            color: #201e1a;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #171715;
+            color: #f5f1e9;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 30px;
+            letter-spacing: 7px;
+        }
+
+        nav a {
+            color: #f5f1e9;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 13px;
+        }
+
+        .hero {
+            padding: 90px 7%;
+            background: #e8e0d3;
+            animation: appear 1s ease;
+        }
+
+        .hero p {
+            color: #75664e;
+            letter-spacing: 4px;
+            font-size: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 75px);
+            font-weight: 400;
+            margin-top: 20px;
+            max-width: 800px;
+            line-height: 1.1;
+        }
+
+        .content {
+            padding: 70px 7%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .content img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+        }
+
+        .text h2 {
+            font-size: 35px;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .text p {
+            color: #716b61;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .quote {
+            padding: 60px 7%;
+            background: #171715;
+            color: #f5f1e9;
+            text-align: center;
+        }
+
+        .quote h2 {
+            font-size: clamp(25px, 4vw, 42px);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            background: #171715;
+            color: #f5f1e9;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .content img {
+                height: 300px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NOIR</div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <p>OUR STORY · OUR PASSION</p>
+    <h1>Beautiful spaces begin with thoughtful design.</h1>
+</section>
+
+
+
+<section class="content">
+    <div class="about-images">
+        <img src="sofa.jpg" alt="NOIR sofa design">
+        <img src="chair.jpg" alt="NOIR chair design">
+        <img src="new chair.jpg.jpeg" alt="NOIR modern chair">
+    </div>
+
+    <div class="text">
+
+
+
+
+
+        <h2>About NOIR</h2>
+
+        <p>
+            At NOIR, we believe that furniture is more than just
+            something you use. It is part of the feeling of your home.
+        </p>
+
+        <p>
+            Our vision is to bring together timeless design,
+            everyday comfort, and elegant details.
+        </p>
+
+        <p>
+            We focus on simple shapes, warm colors, and pieces
+            that make every space feel special.
+        </p>
+    </div>
+</section>
+
+<section class="quote">
+    <h2>Less, but better.<br>Designed for living.</h2>
+</section>
+
+<footer>
+    NOIR — DESIGNED FOR LIVING
+</footer>
+
+</body>
+</html>

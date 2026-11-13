@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOIR | Designed for Living</title>
+
+    <meta name="description"
+          content="Discover timeless furniture and elegant designs at NOIR.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f1e9;
+            color: #201e1a;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #171715;
+            color: #f5f1e9;
+            padding: 24px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .logo {
+            font-size: 30px;
+            letter-spacing: 8px;
+            color: #f5f1e9;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        nav a {
+            color: #f5f1e9;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c8b99e;
+        }
+
+        .hero {
+            min-height: 620px;
+            padding: 100px 7%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(20, 19, 17, 0.88),
+                    rgba(20, 19, 17, 0.30)
+                ),
+                url("sofa.jpg") center 55% / cover no-repeat;
+            color: #f5f1e9;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            animation: rise 1s ease both;
+        }
+
+        .eyebrow {
+            color: #d4c2a4;
+            font-size: 12px;
+            letter-spacing: 5px;
+            line-height: 1.8;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 88px);
+            line-height: 1.05;
+            font-weight: 400;
+            margin: 24px 0;
+        }
+
+        .hero p.description {
+            max-width: 430px;
+            line-height: 1.9;
+            color: #e0d9ce;
+            font-size: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 32px;
+            padding: 16px 28px;
+            background: #e8dfd0;
+            color: #201e1a;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .intro {
+            padding: 90px 7% 35px;
+            text-align: center;
+        }
+
+        .intro .eyebrow {
+            color: #75664e;
+        }
+
+        .intro h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 400;
+            margin-top: 18px;
+        }
+
+        .intro p:last-child {
+            color: #716b61;
+            line-height: 1.8;
+            margin-top: 18px;
+        }
+
+        .categories {
+            padding: 35px 7% 100px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .category {
+            text-decoration: none;
+            color: #201e1a;
+            display: block;
+            animation: rise 0.8s ease both;
+        }
+
+        .category-image {
+            overflow: hidden;
+            background: #e8e0d3;
+        }
+
+        .category img {
+            display: block;
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .category:hover img {
+            transform: scale(1.05);
+        }
+
+        .category h3 {
+            font-size: 25px;
+            font-weight: 400;
+            margin-top: 22px;
+        }
+
+        .category p {
+            color: #75664e;
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 14px;
+        }
+
+        .discover {
+            background: #e8e0d3;
+            padding: 75px 7%;
+            text-align: center;
+        }
+
+        .discover h2 {
+            font-size: clamp(32px, 5vw, 50px);
+            font-weight: 400;
+        }
+
+        .discover p {
+            color: #716b61;
+            margin-top: 18px;
+            line-height: 1.8;
+        }
+
+        .discover .button {
+            background: #171715;
+            color: #f5f1e9;
+        }
+
+        .discover .button:hover {
+            background: #75664e;
+        }
+
+        footer {
+            background: #171715;
+            color: #f5f1e9;
+            padding: 35px 7%;
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            font-size: 24px;
+            letter-spacing: 7px;
+        }
+
+        footer p {
+            color: #c8b99e;
+            margin-top: 15px;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 650px) {
+            header {
+                align-items: flex-start;
+            }
+
+            nav {
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .hero {
+                min-height: 540px;
+                padding: 70px 7%;
+                background-position: center;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .category img {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="index.html">NOIR</a>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">TIMELESS DESIGN · MODERN LIVING</p>
+
+        <h1>Make Room<br>for Beautiful.</h1>
+
+        <p class="description">
+            Discover elegant furniture designed to bring comfort,
+            character, and timeless beauty into your home.
+        </p>
+
+        <a class="button" href="shop.html">EXPLORE COLLECTION</a>
+    </div>
+</section>
+
+<section class="intro">
+    <p class="eyebrow">THE NOIR COLLECTION</p>
+
+    <h2>Beauty in Every Detail.</h2>
+
+    <p>
+        Thoughtful designs. Warm textures. Everyday comfort.
+    </p>
+</section>
+
+
+<section class="discover">
+    <h2>Your Home, Your Style.</h2>
+
+    <p>
+        Find the pieces that make your space feel like you.
+    </p>
+
+    <a class="button" href="shop.html">VIEW ALL PRODUCTS</a>
+</section>
+
+<footer>
+    <div class="footer-logo">NOIR</div>
+
+    <p>TIMELESS DESIGN · DESIGNED FOR LIVING</p>
+</footer>
+
+</body>
+</html>

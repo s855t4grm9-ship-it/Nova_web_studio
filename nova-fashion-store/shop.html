@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOIR | Shop</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f1e9;
+            color: #201e1a;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #171715;
+            color: #f5f1e9;
+            padding: 24px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .logo {
+            font-size: 30px;
+            letter-spacing: 8px;
+            color: #f5f1e9;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav a {
+            color: #f5f1e9;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c8b99e;
+        }
+
+        .hero {
+            padding: 75px 7% 55px;
+            background: #e8e0d3;
+            animation: appear 0.8s ease both;
+        }
+
+        .eyebrow {
+            color: #75664e;
+            font-size: 12px;
+            letter-spacing: 4px;
+            line-height: 1.8;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            font-weight: 400;
+            margin-top: 18px;
+        }
+
+        .hero .description {
+            margin-top: 18px;
+            color: #716b61;
+            line-height: 1.9;
+            max-width: 520px;
+        }
+
+        .section-title {
+            padding: 55px 7% 25px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        .products {
+            padding: 10px 7% 90px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .product {
+            animation: appear 0.8s ease both;
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            background: #e8ddd3;
+        }
+
+        .product-image img {
+            display: block;
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .tag {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: #f5f1e9;
+            padding: 10px 13px;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .product-info {
+            padding: 22px 2px;
+        }
+
+        .product-info h3 {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .product-info .details {
+            color: #716b61;
+            margin-top: 10px;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .product-bottom {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .price {
+            font-size: 16px;
+            color: #75664e;
+        }
+
+        .view-button {
+            display: inline-block;
+            padding: 12px 17px;
+            background: #171715;
+            color: #f5f1e9;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .view-button:hover {
+            background: #75664e;
+        }
+
+        .banner {
+            background: #171715;
+            color: #f5f1e9;
+            padding: 70px 7%;
+            text-align: center;
+        }
+
+        .banner h2 {
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 400;
+        }
+
+        .banner p {
+            color: #c8b99e;
+            margin-top: 16px;
+            line-height: 1.8;
+        }
+
+        .banner a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 25px;
+            border: 1px solid #c8b99e;
+            color: #f5f1e9;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            transition: background 0.3s;
+        }
+
+        .banner a:hover {
+            background: #75664e;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            background: #e8e0d3;
+            color: #75664e;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 650px) {
+            header {
+                align-items: flex-start;
+            }
+
+            nav {
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image img {
+                height: 330px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="index.html">NOIR</a>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <p class="eyebrow">THE NOIR COLLECTION</p>
+
+    <h1>Find Your Perfect Piece.</h1>
+
+    <p class="description">
+        Discover furniture that brings together timeless elegance,
+        everyday comfort, and thoughtful design.
+    </p>
+</section>
+
+<section class="section-title">
+    <p class="eyebrow">CURATED FOR YOUR HOME</p>
+    <h2>Our Collection</h2>
+</section>
+
+<section class="products">
+
+    <article class="product">
+        <div class="product-image">
+            <img src="sofa.jpg" alt="Modern Sofa">
+            <span class="tag">BESTSELLER</span>
+        </div>
+
+        
+        <div class="product-info">
+            <h3>Modern Sofa</h3>
+
+            <p class="details">
+                Comfort meets modern design. A timeless piece
+                for a warm and elegant living space.
+            </p>
+
+            <div class="product-bottom">
+                <p class="price">6,500 EGP</p>
+              <a class="view-button"
+   href="https://wa.me/201065183990?text=Hello%20NOIR,%20I%20am%20interested%20in%20the%20Modern%20Sofa%20priced%20at%208,500%20EGP."
+   target="_blank">
+    ORDER VIA WHATSAPP
+</a>
+            </div>
+        </div>
+        
+    </article>
+
+    <article class="product">
+        <div class="product-image">
+            <img src="chair.jpg" alt="Designer Chair">
+            <span class="tag">TIMELESS DESIGN</span>
+        </div>
+
+        <div class="product-info">
+            <h3>Designer Chair</h3>
+
+            <p class="details">
+                A statement piece with a clean silhouette,
+                designed to complement your interior.
+            </p>
+
+            <div class="product-bottom">
+                <p class="price">Price 8,000 EGP </p>
+             <a class="view-button"
+   href="https://wa.me/201065183990?text=Hello%20NOIR,%20I%20am%20interested%20in%20the%20Designer%20Chair.%20Please%20tell%20me%20the%20price."
+   target="_blank">
+    ORDER VIA WHATSAPP
+</a>
+            </div>
+        </div>
+    </article>
+
+
+
+
+
+
+
+
+
+
+<div class="product">
+   <div class="product-image chair-image">
+    <img src="new chair.jpg.jpeg" alt="Modern Chair">
+    <span class="tag">NEW</span>
+</div>
+
+    <div class="product-info">
+        <h3>Modern Chair</h3>
+
+        <p class="details">
+            Elegant modern chair designed to bring comfort
+            and luxury to your living space.
+        </p>
+
+        <p class="product-price">10,000 EGP</p>
+
+
+
+        <a class="view-button"
+   href="https://wa.me/201065183990?text=Hello%20NOIR,%20I%20am%20interested%20in%20the%20Designer%20Chair.%20Please%20tell%20me%20the%20price."
+   target="_blank">
+    ORDER VIA WHATSAPP
+</a>
+
+
+    </div>
+</div>
+
+</section>
+
+<section class="banner">
+    <h2>Make Your Space Special.</h2>
+
+    <p>
+        Have a question about a piece in our collection?
+        We would love to hear from you.
+    </p>
+
+    <a href="contact.html">CONTACT NOIR</a>
+</section>
+
+<footer>
+    NOIR — DESIGNED FOR LIVING
+</footer>
+
+</body>
+</html>
+
+

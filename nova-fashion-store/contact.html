@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOIR | Contact</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f1e9;
+            color: #201e1a;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #171715;
+            color: #f5f1e9;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 30px;
+            letter-spacing: 7px;
+        }
+
+        nav a {
+            color: #f5f1e9;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 13px;
+        }
+
+        nav a:hover {
+            color: #c8b99e;
+        }
+
+        .hero {
+            padding: 75px 7% 45px;
+            animation: appear 0.8s ease;
+        }
+
+        .hero p {
+            color: #75664e;
+            letter-spacing: 4px;
+            font-size: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 75px);
+            font-weight: 400;
+            margin-top: 20px;
+        }
+
+        .contact-area {
+            padding: 20px 7% 90px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .contact-info p {
+            color: #716b61;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: #75664e;
+            text-decoration: none;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #d6cec1;
+            background: transparent;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #75664e;
+        }
+
+        .contact-form textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background: #171715;
+            color: #f5f1e9;
+            border: none;
+            padding: 16px 30px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #75664e;
+        }
+
+        footer {
+            background: #171715;
+            color: #f5f1e9;
+            text-align: center;
+            padding: 30px;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .contact-area {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NOIR</div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <p>WE WOULD LOVE TO HEAR FROM YOU</p>
+    <h1>Let's Talk.</h1>
+</section>
+
+<section class="contact-area">
+
+    <div class="contact-info">
+        <h2>Get in Touch</h2>
+
+        <p>
+            Have a question about our furniture?
+            We are here to help you find the perfect piece for your home.
+        </p>
+
+        <p><strong>Brand</strong><br>NOIR Furniture</p>
+
+        <p><strong>Email</strong><br>
+            <a href="mailto:hello@noir.com">hello@noir.com</a>
+        </p>
+
+        <p>
+            <strong>Our Promise</strong><br>
+            Timeless design. Everyday comfort.
+        </p>
+    </div>
+
+    <form class="contact-form"
+          onsubmit="event.preventDefault(); alert('Thank you for contacting NOIR! The form is a demo for now.');">
+
+        <h2>Send Us a Message</h2>
+
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <input type="text" placeholder="Subject">
+
+        <textarea placeholder="Your Message" required></textarea>
+
+        <button type="submit">SEND MESSAGE</button>
+
+    </form>
+
+</section>
+
+<footer>
+    NOIR — DESIGNED FOR LIVING
+</footer>
+
+</body>
+</html>
